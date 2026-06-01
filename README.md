@@ -49,7 +49,10 @@ Dabrafenib is a potent, clinically approved, ATP-competitive small-molecule inhi
 
 * **In Silico Transcription:** Utilizes the `Biopython` framework to read raw genomic templates and execute automated *in silico* molecular transcription (substituting Thymine with Uracil) while updating record metadata.
 * **Structural Model Curation:** Maps the primary amino acid sequence of the functional human B-Raf protein domain. The curated sequence was submitted to the public **AlphaFold Server** to leverage its generative diffusion model for high-fidelity 3D target structure prediction.
+
  ![AlphaFold Predicted B-Raf Structure](Results/braf_alphafold_structure.png)
+
+ 
 * **Coordinate Interconversion:** Deploys **Open Babel (`obabel`)** to smoothly convert the native AlphaFold structural package format (`.cif`) into a standard Protein Data Bank coordinate space (`.pdb`), preparing a clean physical matrix for spatial evaluation.
 
 ---
