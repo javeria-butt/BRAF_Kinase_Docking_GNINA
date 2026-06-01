@@ -28,7 +28,8 @@ BRAF_Kinase_Docking_GNINA/
 │   └── BRAF_Molecular_Docking_GNINA.ipynb      # Phase 2: CNN-Driven Molecular Docking & Analytics
 │
 ├── Results/
-│   ├── braf_docking_results.png     # Final thermodynamic binding affinity bar chart
+│   ├── braf_docking_results.png
+|   └── braf_alphafold_structure.png   # Final thermodynamic binding affinity bar chart
 │   └── docking_output.sdf           # Multi-pose coordinate matrix containing the 9 generated poses
 │
 └── README.md                        # Master repository documentation
