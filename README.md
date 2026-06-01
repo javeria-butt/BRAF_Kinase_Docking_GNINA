@@ -32,3 +32,4 @@ BRAF_Kinase_Docking_GNINA/
 │   └── [docking_output.sdf](Results/docking_output.sdf)       # Multi-pose coordinate matrix containing the 9 generated poses
 │
 └── README.md                        # Master repository documentation
+```
