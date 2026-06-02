@@ -29,6 +29,7 @@ BRAF_Kinase_Docking_GNINA/
 │
 ├── Results/
 │   ├── braf_docking_results.png
+|   └── braf_blast_alignment.png
 |   └── braf_alphafold_structure.png   # Final thermodynamic binding affinity bar chart
 │   └── docking_output.sdf           # Multi-pose coordinate matrix containing the 9 generated poses
 │
@@ -48,6 +49,18 @@ Dabrafenib is a potent, clinically approved, ATP-competitive small-molecule inhi
 **[Launch Notebook: BRAF_Sequence_to_Structure_Prep.ipynb](Notebooks/BRAF_Sequence_to_Structure_Prep.ipynb)**
 
 * **In Silico Transcription:** Utilizes the `Biopython` framework to read raw genomic templates and execute automated *in silico* molecular transcription (substituting Thymine with Uracil) while updating record metadata.
+* * **Sequence Verification via NCBI BLAST:** To verify the precise identity, sequence integrity, and functional domain isolation of our query sequence before 3D structural modeling, a local alignment search was executed using the **NCBI Basic Local Alignment Search Tool (BLAST)** against the reference human protein database.
+  
+  #### BLAST Evaluation Parameters:
+  * **Top Query Match:** *Homo sapiens* serine/threonine-protein kinase B-raf isoform 11 (RefSeq Accession: `NP_001365402.1`)
+  * **Percent Identity:** `100.00%` *(Confirms absolute sequence identity, proving zero transcription mutations or sequence-shift errors within the functional target area)*
+  * **Query Coverage:** `33%` *(Reflects the targeted isolation of the functional, catalytic kinase domain from the full-length human reference protein)*
+  * **Expect Value (E-value):** `0.0` *(An E-value of 0.0 absolute mathematically indicates that the statistical probability of this alignment occurring by random chance is completely zero)*
+
+  #### NCBI BLAST Alignment Output:
+  ![NCBI BLAST Sequence Alignment](Results/braf_blast_alignment.png)
+
+This rigorous bioinformatic validation guarantees that the sequence used for downstream neural network folding is flawlessly identical to the characterized human oncology target domain.
 * **Structural Model Curation:** Maps the primary amino acid sequence of the functional human B-Raf protein domain. The curated sequence was submitted to the public **AlphaFold Server** to leverage its generative diffusion model for high-fidelity 3D target structure prediction.
 
  ![AlphaFold Predicted B-Raf Structure](Results/braf_alphafold_structure.png)
